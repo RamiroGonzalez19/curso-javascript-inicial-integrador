@@ -1,0 +1,73 @@
+<!-- Crea una página web que muestre una lista de estudiantes y sus promedios. La página debe realizar las siguientes tareas:
+
+    1. Mostrar la lista de 10 estudiantes.
+    2. Resaltar en color verde a los estudiantes que tengan un promedio de 10.
+    3. Calcular el promedio general de la clase y mostrarlo en algún lugar de la pagina. -->
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Estudiantes</title>
+    
+        <style>
+            .verde {
+                background-color: #00FF00;
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <h1>Lista de Estudiantes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody id="lista-estudiantes-promedio">
+            </tbody>
+        </table>
+        <p>Promedio general de la clase: <span id="promedio"></span></p>
+    
+        <script>
+    
+            const claseJSON = '{"estudiantes":[{"nombre":"Ramiro","promedio":10},{"nombre":"Matias","promedio":9},{"nombre":"Adrian","promedio":9},{"nombre":"Nina","promedio":9},{"nombre":"Hector","promedio":10},{"nombre":"Mauro","promedio":8},{"nombre":"Joaquin","promedio":8},{"nombre":"Evelyn","promedio":6},{"nombre":"Candela","promedio":7},{"nombre":"Lihuen","promedio":8}]}'
+            const clase = JSON.parse(claseJSON)
+    
+            let listaEstudiantes = document.getElementById("lista-estudiantes-promedio");
+            let promedioResultado = document.getElementById("promedio");
+    
+            let acumulador = 0;
+            let contador = 0;
+            let promedioGeneral;
+    
+            for (let i = 0; i < clase.estudiantes.length; i++) {
+                const estudiante = clase.estudiantes[i];
+    
+    
+                let estudianteHTMLString = '';
+                if (estudiante.promedio == 10) {
+                    estudianteHTMLString = `<tr class="verde"><td>${estudiante.nombre}</td><td>${estudiante.promedio}</td></tr>`;
+                } else {
+                    estudianteHTMLString = `<tr><td>${estudiante.nombre}</td><td>${estudiante.promedio}</td></tr>`;
+                }
+    
+    
+                listaEstudiantes.insertAdjacentHTML("beforeend", estudianteHTMLString);
+    
+    
+                contador++;
+                acumulador += estudiante.promedio;
+            }
+    
+            promedioGeneral = acumulador / contador;
+            promedioResultado.textContent = `${promedioGeneral}`;
+    
+        </script>
+    </body>
+    
+    </html>

@@ -1,0 +1,44 @@
+{
+    "estudiantes": [
+        {
+            "nombre": "Ramiro",
+            "promedio": 10
+        },
+        {
+            "nombre": "Matias",
+            "promedio": 9
+        },
+        {
+            "nombre": "Adrian",
+            "promedio": 9
+        },
+        {
+            "nombre": "Nina",
+            "promedio": 9
+        },
+        {
+            "nombre": "Hector",
+            "promedio": 10
+        },
+        {
+            "nombre": "Mauro",
+            "promedio": 8
+        },
+        {
+            "nombre": "Joaquin",
+            "promedio": 8
+        },
+        {
+            "nombre": "Evelyn",
+            "promedio": 6
+        },
+        {
+            "nombre": "Candela",
+            "promedio": 7
+        },
+        {
+            "nombre": "Lihuen",
+            "promedio": 8
+        }
+    ]
+}

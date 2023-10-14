@@ -1,0 +1,88 @@
+<!-- 1. Estructura del Modal:
+    - Crea un modal con un input de tipo numérico y un botón de confirmación.
+
+2. Funcionalidad del Botón:
+    - Utiliza JavaScript para detectar el clic en el botón de confirmación dentro del modal.
+    - Cuando se hace clic en el botón de confirmación, lee el valor del input numérico ingresado por el usuario.
+
+3. Mostrar y Cerrar el Modal:
+    - Muestra el número ingresado por el usuario en un elemento HTML.
+    - Cierra el modal después de mostrar el número. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <style>
+        .modal-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #111111bd;
+            display: flex;
+        }
+
+        .modal-contenido {
+            margin: auto;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90%;
+            background-color: aliceblue;
+            border-radius: 6px;
+            padding: 3em 2.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+
+    <!-- Boton modal -->
+    <button id="abrirModal">Abrir Modal</button>
+
+    <div id="miModal" class="modal-container">
+        <div class="modal-contenido">
+            <span id="cerrarModal" class="cerrar-modal">&times;</span>
+            <h2>Modal</h2>
+            <input type="number" id="inputNumerico">
+            <button id="confirmar">Confirmar</button>
+        </div>
+    </div>
+    
+    <div id="resultado"></div>
+
+
+    <script>
+        // DOM
+        const modal = document.getElementById("miModal");
+        const abrir = document.getElementById("abrirModal");
+        const cerrar = document.getElementById("cerrarModal");
+
+        // Abrir modal
+        abrir.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        // Cerrar modal
+        cerrar.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        const confirmar = document.getElementById("confirmar");
+        const inputNumerico = document.getElementById("inputNumerico");
+        const resultado = document.getElementById("resultado");
+
+        confirmar.addEventListener("click", () => {
+            resultado.textContent = "Número ingresado: " + inputNumerico.value;
+            modal.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

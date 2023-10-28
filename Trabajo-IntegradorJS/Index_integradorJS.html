@@ -1,0 +1,52 @@
+<!-- Descripción del Trabajo:
+
+1. Cargar Datos:
+   - Leer un archivo JSON desde la siguiente URL: `https://portal.edu-apps.com.ar/api/products/?format=json`.
+
+2. Mostrar Productos:
+   - Mostrar los diferentes productos del catálogo en elementos HTML. Cada producto debe mostrar al menos su nombre y precio.
+
+3. Productos con Precio Más Alto:
+   - Diferenciar visualmente los productos que tienen el precio más alto del resto. 
+   Esto puede lograrse cambiando los colores de los bordes, 
+   agregando una leyenda u otra forma creativa de destacarlos.
+
+4. Modal de Producto:
+   - Al hacer clic en uno de los productos, se deberá abrir un modal que contenga 
+   la imagen correspondiente al producto y mostrar por debajo la descripción del mismo.
+
+5. Cerrar Modal:
+   - Al hacer clic fuera del modal o en algún elemento "X", el modal deberá cerrarse
+    para permitir la continuación de la navegación en la página web. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Oficial</title>
+    <link rel="stylesheet" href="./Style_integradorJS.css">
+
+
+</head>
+
+<body>
+    <h1>Catálogo de Autos</h1>
+    <div id="product-list"></div>
+
+    <!-- Modal -->
+    <div id="miModal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal">&times;</span>
+            <img id="img-product" class="" alt="Imagen del Producto">
+            <p id="description-product"></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Index_integradorJS.js"></script>
+
+</body>
+
+</html>
